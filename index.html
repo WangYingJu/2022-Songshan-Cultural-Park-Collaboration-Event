@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>熊寶松菸夏日導遊</title>
+    <link href=" https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css " rel="stylesheet">
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <!-- css js -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/popup.js"></script>
+</head>
+<body>
+    
+    <div class="wrap">
+        
+        <div class="main" id="top">
+            <h1 class="logo"><img src="images/logo.png" alt="艾肯娛樂"></h1>
+            <img class="visual" src="images/index.jpg" alt="熊寶松菸夏日導遊">
+        </div>
+
+        <div class="container">
+            <!-- 首次蒐集徽章時顯示 start -->
+            <!-- nav-bar 不作用 -->
+            <div class="first_record content" style="display: none;">
+                <h2 class="text-lg m-b-m">恭喜您找到第一個<br>熊寶勳章</h2>
+                <div class="bn m-b-m">
+                    <img src="images/bn_01.jpg" alt="">
+                </div>
+                <p class="text-sm m-b-m">圖片文字故事圖片文字故事圖片文字故事圖片文字故事圖片文字故事</p>
+                <p class="login-info text-xs m-b-s">請先登入才會計算您的<br>集點紀錄喔!趕緊開始您的徽章蒐集之旅吧!</p>
+                <a href="#"><img  class="link" src="images/btn_line.png" alt="登入line"></a>
+            </div>
+            <!-- 首次蒐集徽章時顯示 end -->
+
+            <div class="record content">
+                <div class="title_record" id="record">
+                    <h2 class="position-abs animate__pulse"><img src="images/title_record.png" alt="蒐集紀錄"></h2>
+                    <div class="record_decorA"><img src="images/record_decorA.png" alt=""></div>
+                    <div class="record_decorB"><img src="images/record_decorB.png" alt=""></div>
+                </div>
+                <div class="point">
+                    <a class="text-xs m-b-s popup-btn" href="#openMap"><img src="images/btn_point.png" alt="">小小提示</a>
+                </div>
+                
+                <ul class="stamp m-b-s">
+                    <!-- 蒐集到徽章時新增stamp-on到class裡 -->
+                    <!-- 蒐集到徽章時新增a連結href="#letmeopen" -->
+                    <li><a href="#openStory" class="popup-btn"><img class="stamp-off stamp-on" src="images/stamp.png" alt=""></a></li>
+                    <li><img class="stamp-off" src="images/stamp.png" alt=""></li>
+                    <li><img class="stamp-off" src="images/stamp.png" alt=""></li>
+                    <li><img class="stamp-off" src="images/stamp.png" alt=""></li>
+                    <li><img class="stamp-off" src="images/stamp.png" alt=""></li>
+                    <li><img class="stamp-off" src="images/stamp.png" alt=""></li>
+                    <li><img class="stamp-off" src="images/stamp.png" alt=""></li>
+                    <li><img class="stamp-off" src="images/stamp.png" alt=""></li>
+                    <li><img class="stamp-off" src="images/stamp.png" alt=""></li>
+                    <li><img class="stamp-off" src="images/stamp.png" alt=""></li>
+                    <li><img class="stamp-off" src="images/stamp.png" alt=""></li>
+                    <li><img class="stamp-off" src="images/stamp.png" alt=""></li>
+                    <li><img class="stamp-off" src="images/stamp.png" alt=""></li>
+                    <li><img class="stamp-off" src="images/stamp.png" alt=""></li>
+                    <li><img class="stamp-off" src="images/stamp.png" alt=""></li>
+                    <li><img class="stamp-off" src="images/stamp.png" alt=""></li>
+                </ul>
+                <ul class="text text-sm m-b-s">
+                    <li>集滿四點可獲得抽一次幸運轉盤</li>
+                    <li>粉絲團按讚可額外抽一次</li>
+                    <li>集滿所有點可至服務中心領取贈品哦!</li>
+                </ul>
+                <a href="#" target="_blank"><img  class="link" src="images/btn_fb.png" alt="fb粉絲團"></a>
+            </div>
+
+            <div class="game" id="game">
+                <img class="bg_game" src="images/bg_game.jpg" alt="">
+                <div class="position-abs">
+                    <h2 class="title_game m-b-s animate__tada"><img src="images/title_game.png" alt="幸運轉盤"></h2>
+                    <p class="text-sm m-b-m">您目前抽獎次數尚有<span>00</span>次</p>
+                    <div class="roulette m-b-s">
+                        <img class="bg_roulette" src="images/game_index.png" alt="">
+                        <img class="game_arrow position-abs" src="images/game_arrow.png" alt="">
+                        <!-- 首次遊玩時需跳至資料填寫 -->
+                        <a href="#openLose" class="popup-btn"><img class="btn_start position-abs" src="images/btn_start.png" alt="按我抽獎"></a>
+                        <!-- 無抽獎機會時顯示 -->
+                        <img class="btn_off position-abs" style="display: none;" src="images/btn_off.png" alt="">
+                    </div>
+                    <a href="#openEdit" class="popup-btn"><img class="link" src="images/btn_form.png" alt="資料填寫"></a>
+                </div>
+            </div>
+
+            <div class="search content">
+                <div class="title_search" id="search">
+                    <h2 class="position-abs animate__pulse"><img src="images/title_search.png" alt="中獎查詢"></h2>
+                    <div class="search_decorA"><img src="images/search_decorA.png" alt=""></div>
+                    <div class="search_decorB"><img src="images/search_decorB.png" alt=""></div>
+                </div>
+                <h3 class="text-md m-b-s">- 恭喜您抽到 -</h3>
+                <!-- 沒有中獎紀錄時開啟 表格保留但顯示空值 -->
+                <!-- <h3 class="m-b-s">- 您尚未有中獎紀錄 -</h3> -->
+                <table>
+                    <thead>
+                        <th>項次</th>
+                        <th>獎項</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>A獎 熊寶5200行動電源</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>A獎 熊寶5200行動電源</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>A獎 熊寶5200行動電源</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>A獎 熊寶5200行動電源</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>A獎 熊寶5200行動電源</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="info content">
+                <div class="title_info"  id="info">
+                    <h2 class="position-abs animate__pulse"><img src="images/title_info.png" alt="活動說明"></h2>
+                    <div class="info_decorA"><img src="images/info_decorA.png" alt=""></div>
+                    <div class="info_decorB"><img src="images/info_decorB.png" alt=""></div>
+                    <div class="info_decorC position-abs animate__bounce"><img src="images/info_decorC.png" alt=""></div>
+                </div>
+                <ul class="text-xs text m-b-s">
+                    <li>尋找16個熊寶繪本集點處。</li>
+                    <li>蒐集4個就可獲得抽一次轉盤機會。</li>
+                    <li>蒐集8個則有二次...以此類推。</li>
+                    <li>完成所有集點可到服務中心兌換熊寶精美贈品，數量有限，送完為止!</li>
+                </ul>
+            </div>
+
+            <div class="note content">
+                <div class="title_note">
+                    <h2 class="position-abs animate__pulse"><img src="images/title_note.png" alt="注意事項"></h2>
+                    <div class="note_decorA"><img src="images/note_decorA.png" alt=""></div>
+                    <div class="note_decorB"><img src="images/note_decorB.png" alt=""></div>
+                </div>
+                <ul class="text-xs text m-b-s">
+                    <li>主辦單位保有最終修改、變更或暫停本活動之權利，參加者一旦參加本活動，即表示同意接受主辦單位所有規章。</li>
+                    <li>活動期間如有任何未盡事宜，本公司保留變更或終止本次活動之決定權，相關變更內容將不定期公告於熊寶粉絲團。</li>
+                    <li>獎項詳細內容皆以本活動網站內公佈為準，得獎人不得要求轉讓或變現。</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="go_top">
+            <a href="#top"><img src="images/go_top.png" alt="回到頂部"></a>
+        </div>
+
+        <div class="nav">
+            <ul class="menu">
+                <li><a href="#record"><img src="images/nav_record.png" alt="蒐集紀錄"></a></li>
+                <li><a href="#search"><img src="images/nav_search.png" alt="中獎查詢"></a></li>
+                <li><a href="#game"><img src="images/nav_game.png" alt=幸運轉盤"></a></li>
+                <li><a href="#info"><img src="images/nav_info.png" alt="活動說明"></a></li>
+            </ul>
+        </div>
+        
+        <!-- 未中獎 popup -->
+        <div class="popup-wrap" id="openLose">
+            <div class="popup-box transform-out">
+                <h2 class="text-lg m-b-s">好可惜<br><span>這次沒有中獎</span></h2>
+                <div class="bn m-b-s">
+                    <img src="images/lose.png" alt="沒有中獎">
+                </div>
+                <a class="popup-close back" href="#"><img src="images/btn_back.png" alt="返回"></a>
+                <a class="close-btn popup-close" href="#"><img src="images/btn_close.png" alt="關閉"></a>
+            </div>
+        </div>
+
+        <!-- 中獎 popup -->
+        <div class="popup-wrap" id="openWin">
+            <div class="popup-box transform-out">
+                <h2 class="text-lg">恭喜您抽到<br><span>熊寶5200行動電源</span></h2>
+                <h3 class="text-xs m-b-s"><span>(顏色隨機)</span></h3>
+                <div class="bn m-b-s">
+                    <img src="images/win_1.png" alt="">
+                </div>
+                <a class="popup-close back" href="#"><img src="images/btn_back.png" alt="返回"></a>
+                <a class="close-btn popup-close" href="#"><img src="images/btn_close.png" alt="關閉"></a>
+            </div>
+        </div>
+
+        <!-- 地圖 popup -->
+        <div class="popup-wrap" id="openMap">
+            <div class="popup-box transform-out">
+                <div class="bn m-b-m">
+                    <img src="images/bn_01.jpg" alt="地圖">
+                </div>
+                <a class="popup-close back" href="#"><img src="images/btn_back.png" alt="返回"></a>
+                <a class="close-btn popup-close" href="#"><img src="images/btn_close.png" alt="關閉"></a>
+            </div>
+        </div>
+
+        <!-- 徽章 popup -->
+        <div class="popup-wrap" id="openStory">
+            <div class="popup-box transform-out">
+                <h2 class="text-lg m-b-s">恭喜您找到第XXX個<br>熊寶勳章</h2>
+                <div class="bn m-b-s">
+                    <img src="images/bn_01.jpg" alt="">
+                </div>
+                <p class="text-sm">圖片文字故事圖片文字故事圖片文字故事圖片文字故事圖片文字故事</p>
+                <a class="close-btn popup-close" href="#"><img src="images/btn_close.png" alt="關閉"></a>
+            </div>
+        </div>
+
+        <!-- 編輯資料 popup -->
+        <div class="popup-wrap" id="openEdit">
+            <div class="popup-edit transform-out">
+                <h2 class="text-xl">填寫資料</h2>
+                <hr class="m-b-s">
+                <h3 class="text-sm">若參加轉盤活動請填寫資料</h3>
+                <h4 class="text-xs m-b-m">如資料不齊或不實 中獎則視同棄權</h4>
+                <div class="editBox m-b-s">
+                    <p class="text-sm">姓名</p>
+                    <input type="text" name="" value="">
+                </div>
+                <div class="editBox m-b-s">
+                    <p class="text-sm">電話</p>
+                    <input type="text" name="" value="">
+                </div>
+                <div class="editBox m-b-m">
+                    <p class="text-sm">地址</p>
+                    <input type="text" name="" value="">
+                </div>
+                <h3 class="text-sm">本次來松菸的目的</h3>
+                <hr class="m-b-s">
+                <div class="check-container m-b-m">
+                    <label class="select m-b-xs">
+                        <input type="checkbox" name="" value="">
+                        <p class="text-sm">參展</p>
+                    </label>
+                    <label class="select m-b-xs">
+                        <input type="checkbox" name="" value="">
+                        <p class="text-sm">逛誠品</p>
+                    </label>
+                    <label class="select m-b-xs">
+                        <input type="checkbox" name="" value="">
+                        <p class="text-sm">散步</p>
+                    </label>
+                    <label class="select m-b-xs">
+                        <input type="checkbox" name="" value="">
+                        <p class="text-sm">為了熊寶活動而來</p>
+                    </label>
+                    <label class="select m-b-xs">
+                        <input type="checkbox" name="" value="">
+                        <p class="text-sm">其他</p>
+                    </label>
+                </div>
+                <label class="mustSelect m-b-xs">
+                    <input type="checkbox" name="" value="">
+                    <p class="text-xs">同意個資聲明</p>
+                </label>
+                <div class="statement overflow-style m-b-m">
+                    <h4 class="m-b-s">同意個人資料聲明</h4>
+                    <ol>
+                        <li>收集目的：參與活動，回應顧客詢問，傳送活動資訊</li>
+                        <li>收集個人信息的範疇：姓名、手機號碼、地區</li>
+                        <li>個人資料供本次活動保留，以及活動聯繫上使用，如您不願意提供基本資料，將有部分服務無法提供與進行，尚請包涵。</li>
+                        <li>提供的資訊須為本人的資料，若發現有冒用之行為，後續產生的法律責任須由填寫人承擔。</li>
+                    </ol>
+                </div>
+                <!-- 資料不全時顯示 -->
+                <p class="text-xs" style="display: none;">*需填寫完整才能進行下一步</p>
+                <button><img src="images/btn_check.png" alt="填寫完成"></button>
+                <!-- 有資料時顯示此按鈕樣式 -->
+                <button style="display: none;"><img src="images/btn_edit.png" alt="修改資料"></button>
+                <a class="close-btn popup-close" href="#"><img src="images/btn_close.png" alt="關閉"></a>
+        </div>
+    </div>
+    </div>
+    
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/popup.js"></script>
+</body>
+</html>
